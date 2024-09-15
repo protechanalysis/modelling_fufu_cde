@@ -19,7 +19,7 @@ As a recently hired data engineer at Fufu Republic, I have been tasked with deve
 1. Map out the necessary entities, relationships and constraints: This should be a
 model (Any degree of abstraction is okay)
 2. Create a dimensional model:
-- Identify a business process of your choice
+- Identify a business process of choice
 - List the business question under the business process that was selected
 - Identify the grain, dimensions and fact.
 
