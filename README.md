@@ -25,7 +25,7 @@ model (Any degree of abstraction is okay)
 
 ## Solution
 
-![er](fufu_republic.png)
+![er](fufu_model.png)
 
 
 ### Dimensional Model
@@ -40,17 +40,16 @@ Analyzing sales performance and customer purchasing behavior across branches, pa
 
 
 #### Fact Table: Order
-Order: Represents each transaction made by a customer, which includes attributes like order_id, outlet_id, customer_id, menu_id, quantity, amount, order_type, and order_time. This links directly with the payment, customer, menu, and outlet tables.
+Sale: Represents each transaction a customer makes, including attributes like order_id, outlet_id, menu_id, quantity, amount, order_time, and payment_time. This links directly with the payment, order, menu, and outlet tables.
 
 *The grain of this table will be at the individual order level, where each row represents one order.*
-Grain: Each order transaction.
+Grain: Each transaction on the sale table.
 
 #### Dimension Tables:
-- Payment: Captures details about payments made for orders, with attributes like order_id, location_id, mode, gateway, amount, and payment_time. This table is connected to the order table by order_id, reflecting the payment details for each order.
-- Menu: Stores information about the menu items available, including menu_id, name, price, and ingredient. This is linked to the order and outlet tables.
-- Outlet: Represents the branches (or locations) of Fufu Republic with attributes like outlet_id, menu_id, and outlet_location. This is linked with the order, menu, and inventory tables to indicate which items are sold at each outlet and where stock is tracked.
-- Customer: Captures customer details with attributes like customer_id, name, and location, linking to the order table to track orders by customers.
-- Ingredient: Represents the ingredients required for menu items. This is linked to the menu table and plays a role in managing stock and inventory.
-- Inventory: Manages the stock levels of ingredients at each outlet, with attributes like ingredient_id, outlet_id, and last_restock_date. This is important for inventory management and ensuring the availability of ingredients.
+- Payment: Captures details about payments made for orders, with attributes like ID, method, mode, amount, and payment_time. 
+- Menu: Stores information about the menu items available, including menu_id, name, and price.
+- Outlet: Represents the branches (or locations) of Fufu Republic with attributes like id, and location.
+- Order: Provides details about the order, such as order type and time.
+
 
 
