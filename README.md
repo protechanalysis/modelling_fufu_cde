@@ -25,7 +25,7 @@ model (Any degree of abstraction is okay)
 
 ## Solution
 
-![er](fufu_model.png)
+![er](fufu_model_cde.png)
 
 
 ### Dimensional Model
@@ -40,7 +40,7 @@ Analyzing sales performance and customer purchasing behavior across branches, pa
 
 
 #### Fact Table: Order
-Sale: Represents each transaction a customer makes, including attributes like order_id, outlet_id, menu_id, quantity, amount, order_time, and payment_time. This links directly with the payment, order, menu, and outlet tables.
+Sale: Represents each transaction a customer makes, including attributes like order_id, outlet_id, amount, and payment_time. This links directly with the payment, order, and outlet tables.
 
 *The grain of this table will be at the individual order level, where each row represents one order.*
 Grain: Each transaction on the sale table.
